@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sir Veritas</title>
-    <!-- Link to Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -16,11 +15,26 @@
             color: #fff;
         }
 
+        .dev-warning {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
         .banner {
             background-color: #2e2e2e;
             padding: 20px;
             text-align: center;
             border-bottom: 3px solid #444;
+            margin-top: 40px; /* Adjusted to account for dev warning */
         }
 
         .banner img {
@@ -78,20 +92,144 @@
             margin-top: 10px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .blog-section {
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
         }
 
-        ul li {
+        .blog-post {
+            width: 300px; /* Slimmer width */
+            height: 400px; /* Taller height */
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .blog-post img {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px; /* Smaller image size */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .blog-post h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .blog-post p {
             margin: 10px 0;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #1db954;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .popup .close-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
+    <div class="dev-warning">
+        ⚠️ This website is currently under development. Some features may not be available.
+    </div>
+
     <div class="banner">
         <img src="https://github.com/SirVeritas1/Veritas/blob/main/S%20(4).png?raw=true" alt="Sir Veritas Logo">
-        <h1>Comming Soon!</h1>
+        <p><a href="#welcome">Welcome</a> | <a href="#socials">Socials</a> | <a href="#other-websites">Other websites</a> | <a href="#blog">Blog</a> | <a href="">Contact</a></p>
+    </div>
+
+    <div id="welcome" class="container">
+        <h1>Welcome to Sir Veritas' Website</h1>
+        <p>Welcome to my website! You may already know me for different reasons, like my <a href="#other-websites">other websites</a>, or social media, which you can find below. You can, of course, always message me on <a href="https://x.com/Sir_Veritas_">Twitter/X</a> or send me an <a href="mailto:sirveritas911@gmail.com">email.</a></p>
+    </div>
+
+    <div id="other-websites" class="container">
+        <h2>Other websites by Sir Veritas</h2>
+        <ul>
+            <li><a href="https://sirveritas1.github.io/VeritasPlaylist/" target="_blank">Sir Veritas Playlists</a></li>
+            <li><a href="https://sirveritas1.github.io/Numpty/numpty.htm" target="_blank">Numpty website</a></li>
+            <li><a href="https://sirveritas1.github.io/tosser/" target="_blank">Tosser Website</a></li>
+        </ul>
+    </div>
+
+    <h2>Blog</h2>
+
+    <div id="blog" class="container">
+        <div class="blog-section">
+            <div class="blog-post">
+                <img src="https://github.com/SirVeritas1/Veritas/blob/main/S%20(4).png?raw=true" alt="Blog Image">
+                <h2>Creation</h2>
+                <p>Today, 09/13/2024, I, Sir Veritas, am writing this blog post about the creation of my personal website. I won’t sugarcoat it, I used AI prompting to bring this site to life. But rest assured, I’m a real person behind the screen. This website is all about me and my journey. <span class="read-more" onclick="openPopup('popup1')">Read more...</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup1" class="popup">
+        <button class="close-btn" onclick="closePopup('popup1')">&times;</button>
+        <img src="https://github.com/SirVeritas1/Veritas/blob/main/S%20(4).png?raw=true" alt="Blog Image">
+        <h2>Creating My Personal Website</h2>
+        <p>On September 13, 2024, I’m sharing a bit about how my personal website came into existence. I want to be transparent about the fact that AI prompting played a significant role in creating this site. It might sound like an automated process, but there’s a real person behind this digital creation.</p>
+        <p>My goal with this website is to provide a space where you can learn more about me, my projects, and my interests. The AI tools helped streamline the development process, but all the content, ideas, and creative decisions are genuinely mine. I hope you find this site engaging and informative as I continue to share more about my journey and experiences.</p>
+        <p>Thank you for visiting, and stay tuned for more updates!</p>
+    </div>
 
     <div id="socials" class="socials">
         <!-- Social media links with icons -->
@@ -105,11 +243,20 @@
             <i class="fas fa-link"></i>
         </a>
     </div>
-    </div>
 
     <footer>
         <p>Created by <a href="https://x.com/Sir_Veritas_" target="_blank">Sir Veritas</a></p>
         <p class="license">© 2024 Sir Veritas. This website is licensed under the AGPL License.</p>
     </footer>
-    </body>
-    </html>
+
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+    </script>
+</body>
+</html>
